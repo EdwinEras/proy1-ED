@@ -5,50 +5,24 @@
  */
 package Vistas;
 
-import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 
-/**
- *
- * @author ADMIN
- */
 public class Root {
     private BorderPane root;
-    private VBox botones;
-    private HBox pilas;
-    
-    
+
     public Root(){
         root = new BorderPane();
-        botones = new VBox();
-        pilas = new HBox();
-        setupBotones();
-        setupPilas();
-        root.setBottom(botones);
-        root.setLeft(pilas);
+        VistaBotones vb = new VistaBotones();
+        VistaMalla vm = new VistaMalla();
+        VistaPilas vp = new VistaPilas();
+        root.setBottom(vb.getBotones());
+        root.setCenter(vm.getMalla());
+        root.setLeft(vp.getPilas());
+        
     }
 
     public BorderPane getRoot() {
         return root;
     }    
-    
-    public void setupBotones(){
-        Button b1 = new Button("Cargar");
-        Button b2 = new Button("Siguiente");
-        botones.getChildren().addAll(b1, b2);
-        
-        b1.setOnMouseClicked((e)->{
-        
-        });
-        
-        b2.setOnMouseClicked((e)->{
-        
-        });
-    }
-    
-    public void setupPilas(){
-        
-    }
+ 
 }
