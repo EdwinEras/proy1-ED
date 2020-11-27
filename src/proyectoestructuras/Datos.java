@@ -15,7 +15,7 @@ public class Datos {
     public static Stack pill;
 
     public Datos(){
-        malla = new Malla();
+        malla = new Malla("Cuadro.txt");
         pill = new Stack();
         System.out.println(malla);
         /*ESTOS METODOS DEBEN IR EN EL MAIN
