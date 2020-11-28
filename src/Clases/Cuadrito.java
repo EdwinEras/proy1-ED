@@ -12,7 +12,7 @@ public class Cuadrito {
     public Cuadrito (int x, int y, Color c){
         this.x = x;
         this.y = y;
-        this.c = Color.WHITE;
+        this.c = c;
     }
     public int getX (){
         return this.x;
