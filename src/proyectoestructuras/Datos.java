@@ -9,10 +9,6 @@ import Clases.Cuadrito;
 import Clases.Malla;
 import com.sun.prism.paint.Color;
 import static com.sun.prism.paint.Color.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
 import java.util.Stack;
 
 public class Datos {
@@ -22,31 +18,22 @@ public class Datos {
     public Datos(){
         malla = new Malla("Cuadro.txt");
         pill = new Stack();
-        Map<Color, ArrayList<Cuadrito>> colorCuadritos = new HashMap<>();
-        colorCuadritos.put(WHITE,new ArrayList<>());colorCuadritos.put(RED,new ArrayList<>());
-        colorCuadritos.put(GREEN,new ArrayList<>());colorCuadritos.put(BLUE,new ArrayList<>());
         int[][] m = malla.getMalla();
         for (int i=0; i<m.length ;i++ ){
             for (int j = 0; j<m[i].length; j++){
-                Cuadrito c = null;
-                switch (m[i][j]) {
-                    case 0:
-                        c = new Cuadrito(i,j,WHITE);
-                        break;
-                    case 1:
-                        c = new Cuadrito(i,j,RED);
-                        break;
-                    case 2:
-                        c = new Cuadrito(i,j,GREEN);
-                        break;
-                    case 3:
-                        c = new Cuadrito(i,j,BLUE);
-                        break;
-                    default:
-                        break;
+                if(m[i][j]==0){
+                    Cuadrito c = new Cuadrito(i,j,WHITE);
+                }else if(m[i][j]==1){
+                    Cuadrito c = new Cuadrito(i,j,RED);
                 }
-                colorCuadritos.get(c.getColor()).add(c);
-            }            
+                }else if(m[i][j]==2){
+                    Cuadrito c = new Cuadrito(i,j,GREEN);
+                }
+                }else if(m[i][j]==3){
+                    Cuadrito c = new Cuadrito(i,j,RED);
+                }
+            }
+                
         }
         System.out.println(malla);
         /*ESTOS METODOS DEBEN IR EN EL MAIN
