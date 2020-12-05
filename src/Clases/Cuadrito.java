@@ -1,18 +1,19 @@
 
 package Clases;
 
-import com.sun.prism.paint.Color;
+import javafx.scene.control.Button;
 
-public class Cuadrito {
-    
+public class Cuadrito extends Button{
     private int x;
     private int y;
-    private Color c;
+    private int c;
 
-    public Cuadrito (int x, int y, Color c){
+    public Cuadrito (int x, int y, int c){
+        this.setMinSize(80, 40);
         this.x = x;
         this.y = y;
-        this.c = Color.WHITE;
+        this.c = c;
+        setColor(c);
     }
     public int getX (){
         return this.x;
@@ -25,17 +26,39 @@ public class Cuadrito {
     }
     public void setY (int y){
         this.y = y;
-    } 
+    }
 
-    public Color getColor() {
+    public int getC() {
         return c;
     }
-
-    public void setColor(Color c) {
-        this.c = c;
-    }
     
-    public boolean isWhite(){
-        return this.c.equals(Color.WHITE);
+    public void setColor(int num) {
+        switch (num) {
+            case 1:
+                this.c = num;
+                this.setStyle("-fx-background-color: #EC7063;-fx-border-color: black;");
+                break;
+            case 2:
+                this.c = num;
+                this.setStyle("-fx-background-color: #9B59B6;-fx-border-color: black;");
+                break;
+            case 3:
+                this.c = num;
+                this.setStyle("-fx-background-color: #5DADE2;-fx-border-color: black;");
+                break;
+            case 4:
+                this.c = num;
+                this.setStyle("-fx-background-color: #58D68D;-fx-border-color: black;");
+                break;
+            case 5:
+                this.c = num;
+                this.setStyle("-fx-background-color: #F4D03F;-fx-border-color: black;");
+                break;
+            default:
+                this.c = num;
+                this.setStyle("-fx-background-color: #FDFEFE;-fx-border-color: black;");
+                break;
+        }
+        
     }
 }

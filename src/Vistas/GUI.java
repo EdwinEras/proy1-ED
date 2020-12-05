@@ -8,6 +8,7 @@ package Vistas;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import proyectoestructuras.Datos;
 
 /**
  *
@@ -16,13 +17,11 @@ import javafx.stage.Stage;
 public class GUI extends Application {
     
     @Override
-    public void start(Stage primaryStage) {
-        
+    public void start(Stage primaryStage){
+        Datos d = new Datos();
         Root r = new Root();
-        
-        Scene scene = new Scene(r.getRoot(), 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
+        Scene scene = new Scene(r.getRoot(), 700, 400);
+        primaryStage.setTitle("Proyecto Estructuras");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

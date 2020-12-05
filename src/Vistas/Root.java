@@ -9,20 +9,27 @@ import javafx.scene.layout.BorderPane;
 
 public class Root {
     private BorderPane root;
+    VistaBotones vb;
+    VistaMalla vm;
+    VistaPilas vp;
 
     public Root(){
         root = new BorderPane();
-        VistaBotones vb = new VistaBotones();
-        VistaMalla vm = new VistaMalla();
-        VistaPilas vp = new VistaPilas();
+        vb = new VistaBotones();
+        vm = new VistaMalla();
+        vp = new VistaPilas();
         root.setBottom(vb.getBotones());
-        root.setCenter(vm.getMalla());
-        root.setLeft(vp.getPilas());
-        
+        root.setRight(vm.getMalla());
+        root.setLeft(vp.getPilas());        
     }
 
     public BorderPane getRoot() {
         return root;
     }    
- 
+
+    public VistaBotones getVb() {
+        return vb;
+    }
+    
+    
 }
