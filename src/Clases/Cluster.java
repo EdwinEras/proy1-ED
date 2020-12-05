@@ -6,6 +6,7 @@
 package Clases;
 
 import com.sun.prism.paint.Color;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,10 +15,10 @@ import com.sun.prism.paint.Color;
 public class Cluster {
     private Color color;
     private int tamanio;
-    private Cuadrito[] pixeles;
+    private ArrayList<Cuadrito> pixeles;
 
-    public Cluster(Cuadrito[] pixeles) {
-        this.color = pixeles[0].getColor();
+    public Cluster(ArrayList<Cuadrito> pixeles) {
+        this.color = pixeles.get(0).getColor();
         this.pixeles = pixeles;
     }
 
@@ -37,11 +38,11 @@ public class Cluster {
         this.tamanio = tamanio;
     }
 
-    public Cuadrito[] getPixeles() {
+    public ArrayList<Cuadrito> getPixeles() {
         return pixeles;
     }
 
-    public void setPixeles(Cuadrito[] pixeles) {
+    public void setPixeles(ArrayList<Cuadrito> pixeles) {
         this.pixeles = pixeles;
     }
     

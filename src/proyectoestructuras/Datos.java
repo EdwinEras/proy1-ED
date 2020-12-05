@@ -9,29 +9,38 @@ import Clases.Cuadrito;
 import Clases.Malla;
 import com.sun.prism.paint.Color;
 import static com.sun.prism.paint.Color.*;
+import java.util.ArrayList;
+import java.util.PriorityQueue;
 import java.util.Stack;
 
 public class Datos {
     public static Malla malla;
     public static Stack pill;
+    public static PriorityQueue cola;
 
     public Datos(){
         malla = new Malla("Cuadro.txt");
         pill = new Stack();
+        cola = new PriorityQueue();
         int[][] m = malla.getMalla();
+        
         for (int i=0; i<m.length ;i++ ){
+            ArrayList<Cuadrito> clouser = new ArrayList<>();
             for (int j = 0; j<m[i].length; j++){
+                Cuadrito c = null;
                 if(m[i][j]==0){
-                    Cuadrito c = new Cuadrito(i,j,WHITE);
+                    c = new Cuadrito(i,j,WHITE);
                 }else if(m[i][j]==1){
-                    Cuadrito c = new Cuadrito(i,j,RED);
-                }
+                    c = new Cuadrito(i,j,RED);
                 }else if(m[i][j]==2){
-                    Cuadrito c = new Cuadrito(i,j,GREEN);
-                }
+                    c = new Cuadrito(i,j,GREEN);
                 }else if(m[i][j]==3){
-                    Cuadrito c = new Cuadrito(i,j,RED);
+                    c = new Cuadrito(i,j,RED);
+                }else if(m[i][j]==4){
+                    c = new Cuadrito(i,j,BLACK);
                 }
+                clouser.add(c);
+                cola.add(c);
             }
                 
         }
