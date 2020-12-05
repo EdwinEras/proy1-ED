@@ -38,4 +38,6 @@ public class Cuadrito {
     public boolean isWhite(){
         return this.c.equals(Color.WHITE);
     }
+    
+    
 }
